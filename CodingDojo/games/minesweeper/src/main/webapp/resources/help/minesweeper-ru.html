@@ -1,0 +1,203 @@
+<!--
+  #%L
+  Codenjoy - it's a dojo-like platform from developers to developers.
+  %%
+  Copyright (C) 2018 Codenjoy
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as
+  published by the Free Software Foundation, either version 3 of the
+  License, or (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU General Public
+  License along with this program.  If not, see
+  <http://www.gnu.org/licenses/gpl-3.0.html>.
+  #L%
+  -->
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Minesweeper codenjoy — как играть? | Игры на работе</title>
+    <link href="../css/all.min.css" media="all" type="text/css" rel="stylesheet">
+    <link href="../css/custom.css" rel="stylesheet">
+
+    <script src="../js/all.min.js"></script>
+    <style>
+        li {
+            display: inline;
+            list-style-type: none;
+            padding-right: 20px;
+        }
+        .language-list {
+          margin: 20px;
+          display: flex;
+          justify-content: center;
+        }
+    </style>
+</head>
+
+<body style="background-color: white;"
+    class="single single-post postid-170 single-format-standard logged-in admin-bar singular one-column content customize-support">
+    <div id="settings" page="rules"></div>
+    <div class="language-list">
+        <p style="padding-right: 10px">Languages:</p>
+        <ul>
+            <li><a href="/codenjoy-contest/resources/help/minesweeper-en.html">English</a></li>
+            <li><b>>>>Русский</b></a></li>
+            <li><a href="/codenjoy-contest/resources/help/minesweeper.html">Українська</a></li>
+        </ul>
+    </div>
+
+    <div id="page" class="hfeed">
+        <div id="main">
+            <div id="primary">
+                <div id="content" role="main">
+                    <header class="entry-header">
+                        <h1 class="entry-title">Девелоперы побеждают вирус!</h1>
+                    </header>
+
+                    <div class="entry-content">
+                        <div class="page-restrict-output">
+                            <p>Задача на "подумать" и немного фана - это об обновленной версии сапера от Lviv JS
+                                Community! Играем в кодинг-игру, в которой вместо бомб надо искать инфицированные клетки
+                                и отправлять их "на карантин". Напиши своего бота-спасителя и сражайся с другими
+                                истребителями вируса!</p>
+                            <h2>Кто может участвовать?</h2>
+                            <p>ЕПАМеры, которые знакомы с JavaScript, Java, C# или Python и стремятся не только весело
+                                провести время, но и прокачать подходы к алгоритмическому программированию.
+                            </p>
+
+                            <h2>Как играть?
+
+                            </h2>
+                            <p>Каждый игрок имеет свое игровое поле и может передвигаться по свободным клеткам во все 4
+                                стороны. Есть ли вирусы вокруг ячейки, можно понять, когда в нее попадаешь. Открывшаяся
+                                цифра означает количество инфицированных клеток вокруг текущей. Если цифры нет - значит,
+                                вокруг "все тихо". Если же герой на своем пути натолкнется на ячейку с вирусом -
+                                начинает игру заново. Поэтому необходимо заранее обдумать, как "разминировать" участок в
+                                заданном направлении.
+                            </p>
+                            <p>TДля старта вам нужно <a
+                                    href="http://static.cdn.epam.com/uploads/02667d107833051af35dd4d782fd99fb/minesweeper-servers.zip">
+                                    скачать клиент вашего языка программирования</a>
+                                и запустить его.
+
+                            </p>
+                            <h2>Как победить?
+                            </h2>
+                            <p>FЗа правильно перемещенные в карантин клетки герой получает бонусные баллы, за ошибку -
+                                штрафные. После ошибки герой появляется на новом поле с рандомним размещением
+                                инфицированных клеток и играет сначала (потому что нужно спасать планету!) - и так
+                                бесконечное количество раз. Эти баллы добавляются, побеждает игрок с наибольшей суммой
+                                баллов (по состоянию на определенный момент времени).
+
+                            </p>
+                            <h2>Ну что, готовы бороться с вирусами? :)</h2>
+                            <br>
+                            <h2>Инструкция
+                            </h2>
+                            <p>Итак, игрок регистрируется <a href="http://ecsc00a05a65.epam.com/codenjoy-contest/">
+                                    на сервере</a>, указывая корпоративный email (@epam). Далее необходимо <a
+                                    href="http://static.cdn.epam.com/uploads/02667d107833051af35dd4d782fd99fb/minesweeper-servers.zip">
+                                    скачать клиент</a>, выбрать свой язык программирования, и подключиться к серверу
+                                через вебсокет.
+                            </p>
+                            <h2>Игра доступна ТОЛЬКО В EPAM СЕТИ ИЛИ ЧЕРЕЗ VPN!
+                            </h2>
+                            <p>Адрес для подключения к игре на сервере
+                                <pre>ws://ecsc00a05a65.epam.com:8080/codenjoy-contest/ws?user=3edq63tw0bq4w4iem7nb&code=12345678901234567890</pre>
+                                Здесь 'user' - id игрока, a 'code' - твой security token, который получаем из адресной
+                                строки браузера после регистрации / логина.
+
+                            </p>
+
+                            <p>После подключения клиент будет регулярно (каждую секунду) получать строку символов - с
+                                закодированным состоянием поля. Формат такой:
+                            </p>
+
+                            <pre>^board=(.*)$</pre>
+                            <p>С помощью этого regexp можно выдернуть строку борда. Вот пример строки от сервера:
+                            </p>
+                            <pre>board=☼☼☼☼☼☼☼☼☼☼☼☼☼☼☼☼*************☼☼*************☼☼*************☼☼*************☼☼*************☼☼*************☼☼*************☼☼*************☼☼*************☼☼**3‼*********☼☼**2☺‼********☼☼111‼*********☼☼ ************☼☼☼☼☼☼☼☼☼☼☼☼☼☼☼☼</pre>
+                            <p>Длина строки равна площади поля. Если вставить символ переноса строки каждые sqrt (length
+                                (string)) символов, то получится читабельное изображение поля.
+
+                            </p>
+                            <pre>☼☼☼☼☼☼☼☼☼☼☼☼☼☼☼
+☼*************☼
+☼*************☼
+☼*************☼
+☼*************☼
+☼*************☼
+☼*************☼
+☼*************☼
+☼*************☼
+☼*************☼
+☼**3‼*********☼
+☼**2☺‼********☼
+☼111‼*********☼
+☼ ************☼
+☼☼☼☼☼☼☼☼☼☼☼☼☼☼☼</pre>
+                            <p>Первый символ строки соответствует ячейке, расположенной в левом верхнем углу, с
+                                координатой [0, 0]. В этом примере позиция героя (символ ☺) - [4, 11].
+
+                            </p>
+                            <p>Расшифровка символов</p>
+                            <p>Феман - место, где еще не бывал спасатель. Там может быть инфицирован клеточка
+
+                            </p>
+                            <pre>HIDDEN('*')</pre>
+                            <p>Индикатор количества инфицированных клеток рядом
+                            </p>
+                            <pre>MINES("12345678")</pre>
+                            <p>Наш герой
+                            </p>
+                            <pre>DETECTOR('☺')</pre>
+                            <p>Знак карантина. Если знак поставлен на инфицированную клетку - она отправляется на
+                                карантин (нейтрализуется), а цифры рядом обновляются. Если выбор флажка ложный -
+                                начисляется штраф
+                            </p>
+                            <pre>FLAG('‼')</pre>
+                            <p>Труп героя</p>
+                            <pre>BANG('Ѡ')</pre>
+                            <p>На секунду после смерти героя поле открывается, чтобы можно было увидеть, где были
+                                инфицированы клетки
+
+                            </p>
+                            <pre>HERE_IS_BOMB('☻')</pre>
+                            <p>... а также инфицированные клетки, которые удалось нейтрализовать</p>
+                            <pre>DESTROYED_BOMB('x')</pre>
+                            <p>Нет инфицированных клеток вокруг текущей ячейки
+                            </p>
+                            <pre>NONE(' ')</pre>
+                            <p>Пределы поля
+                            </p>
+                            <pre>BORDER('☼')</pre>
+                            <p>Игра пошаговая, каждую секунду сервер посылает твоему клиенту (боту) состояние
+                                обновленного поля на текущий момент и ожидает ответа - команды герою. За следующую
+                                секунду игрок должен успеть дать команду герою. Если не успел - герой стоит на месте.
+                            </p>
+                            <p>Команд существует несколько: UP, DOWN, LEFT, RIGHT - приводят в движение героя в заданном
+                                направлении на 1 клетку; ACT + UP | DOWN | LEFT | RIGHT - выставить флажок в заданном
+                                направлении.
+                            </p>
+                            <p>
+                                Основная задача - вести продуманную игру и победить вирус.
+                                Удачи вам в борьбе с коронавируса!
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
