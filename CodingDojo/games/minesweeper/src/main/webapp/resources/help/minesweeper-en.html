@@ -1,0 +1,208 @@
+<!--
+  #%L
+  Codenjoy - it's a dojo-like platform from developers to developers.
+  %%
+  Copyright (C) 2018 Codenjoy
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as
+  published by the Free Software Foundation, either version 3 of the
+  License, or (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU General Public
+  License along with this program.  If not, see
+  <http://www.gnu.org/licenses/gpl-3.0.html>.
+  #L%
+  -->
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Minesweeper codenjoy — как играть? | Игры на работе</title>
+    <link href="../css/all.min.css" media="all" type="text/css" rel="stylesheet">
+    <link href="../css/custom.css" rel="stylesheet">
+
+    <script src="../js/all.min.js"></script>
+    <style>
+        li {
+            display: inline;
+            list-style-type: none;
+            padding-right: 20px;
+        }
+        .language-list {
+          margin: 20px;
+          display: flex;
+          justify-content: center;
+        }
+    </style>
+</head>
+
+<body style="background-color: white;"
+    class="single single-post postid-170 single-format-standard logged-in admin-bar singular one-column content customize-support">
+    <div id="settings" page="rules"></div>
+
+    <div class="language-list">
+        <p style="padding-right: 10px">Languages:</p>
+        <ul>
+            <li><b>>>>English</b></li>
+            <li><a href="/codenjoy-contest/resources/help/minesweeper-ru.html">Русский</a></li>
+            <li><a href="/codenjoy-contest/resources/help/minesweeper.html">Українська</a></b></li>
+        </ul>
+    </div>
+    <div id="page" class="hfeed">
+        <div id="main">
+            <div id="primary">
+                <div id="content" role="main">
+                    <header class="entry-header">
+                        <h1 class="entry-title">Developers defeat the virus! </h1>
+                    </header>
+
+                    <div class="entry-content">
+                        <div class="page-restrict-output">
+                            <p>A challenge for the mind and a bit of fun - it's about the updated version of the
+                                minesweeper game by the Lviv JS Community!
+                                We’re launching a coding game where instead of seeking bombs, you need to look for
+                                infected cells and send them to "quarantine." Write your rescue bot and fight with other
+                                virus fighters!
+
+                            </p>
+                            <h2>Who can participate?</h2>
+                            <p>EPAMers who are familiar with JavaScript, Java, C #, or Python and strive not only to
+                                have fun but also to improve approaches to algorithmic programming.
+
+                            </p>
+
+                            <h2>How to play?
+                            </h2>
+                            <p>Each player has his playing field and can move around in free cells in all four
+                                directions. The only way to know whether there are viruses around the cell is to get
+                                into it. The revealed number shows the number of infected cells around the current one.
+                                If there is no number, then everything is OK. If the player comes across an infected
+                                cell, the game is over. Therefore, you should consider in advance how to "clear" the
+                                area in a given direction.
+
+
+                            </p>
+                            <p>To start, you need to <a
+                                    href="http://static.cdn.epam.com/uploads/02667d107833051af35dd4d782fd99fb/minesweeper-servers.zip">
+                                    download the client of your programming language</a>
+                                and run it.
+
+                            </p>
+                            <h2>How to win?</h2>
+                            <p>For correctly moved quarantine cells the player receives bonus points, for an error -
+                                penalty points. After a mistake, the player appears on a new field with random placement
+                                of infected cells and plays first (because you need to save the planet!) - and so an
+                                infinite number of times. After adding all points, the player with the highest total
+                                points wins (as of a certain point in time).
+
+                            </p>
+                            <h2>Well, are you ready to fight viruses? :)</h2>
+                            <br>
+                            <h2>Manual
+                            </h2>
+                            <p>The player is registered on <a href="http://ecsc00a05a65.epam.com/codenjoy-contest/">
+                                    the server</a>, by entering a corporate email (@epam). After that, you need to<a
+                                    href="http://static.cdn.epam.com/uploads/02667d107833051af35dd4d782fd99fb/minesweeper-servers.zip">
+                                    download the client</a>, select your programming language, and connect to the server
+                                via the web socket.
+
+                            </p>
+                            <h2>The game is available ONLY in EPAM NETWORK OR BY VPN!
+                            </h2>
+                            <p>The address for connecting to the game on the server
+                                <pre>ws://ecsc00a05a65.epam.com:8080/codenjoy-contest/ws?user=3edq63tw0bq4w4iem7nb&code=12345678901234567890</pre>
+                                A 'user' is the id of the player, a 'code' is your security token, which you get from
+                                the address bar in the browser after registration/login.
+
+                            </p>
+
+                            <p>After connecting, the client will regularly (every second) receive a string of characters
+                                - with the encoded state of the field. The format is:
+                            </p>
+
+                            <pre>^board=(.*)$</pre>
+                            <p>With this regexp, you can draw a bord line. Here is an example line from the server:
+
+                            </p>
+                            <pre>board=☼☼☼☼☼☼☼☼☼☼☼☼☼☼☼☼*************☼☼*************☼☼*************☼☼*************☼☼*************☼☼*************☼☼*************☼☼*************☼☼*************☼☼**3‼*********☼☼**2☺‼********☼☼111‼*********☼☼ ************☼☼☼☼☼☼☼☼☼☼☼☼☼☼☼☼</pre>
+                            <p>The length of the string is equal to the area of the field. If you insert a line break
+                                character every sqrt (length (string)) characters, you get a readable image of the
+                                field.
+
+                            </p>
+                            <pre>☼☼☼☼☼☼☼☼☼☼☼☼☼☼☼
+☼*************☼
+☼*************☼
+☼*************☼
+☼*************☼
+☼*************☼
+☼*************☼
+☼*************☼
+☼*************☼
+☼*************☼
+☼**3‼*********☼
+☼**2☺‼********☼
+☼111‼*********☼
+☼ ************☼
+☼☼☼☼☼☼☼☼☼☼☼☼☼☼☼</pre>
+                            <p>The first character of the line corresponds to the cell located in the upper left corner,
+                                with the coordinate [0, 0]. In this example, the position of the player (symbol ☺) is
+                                [4, 11].
+                            </p>
+                            <p>Character Decoding</p>
+                            <p>Feman is a place where a lifeguard has not yet been. A cell can be infected there.
+                            </p>
+                            <pre>HIDDEN('*')</pre>
+                            <p>The indicator of the number of infected cells nearby
+                            </p>
+                            <pre>MINES("12345678")</pre>
+                            <p>Our player
+                            </p>
+                            <pre>DETECTOR('☺')</pre>
+                            <p>Quarantine sign. If the mark is placed on an infected cell, it is quarantined
+                                (neutralized), and the numbers next to it are updated. If the choice of the flag is
+                                false - a penalty is charged
+
+                            </p>
+                            <pre>FLAG('‼')</pre>
+                            <p>The corpse of a player</p>
+                            <pre>BANG('Ѡ')</pre>
+                            <p>For a second after the player’s death, the field opens so that you can see where the
+                                cells were infected
+                            </p>
+                            <pre>HERE_IS_BOMB('☻')</pre>
+                            <p>... as well as infected cells that were able to neutralize</p>
+                            <pre>DESTROYED_BOMB('x')</pre>
+                            <p>No infected cells around the current forum cell
+                            </p>
+                            <pre>NONE(' ')</pre>
+                            <p>Field limits
+                            </p>
+                            <pre>BORDER('☼')</pre>
+                            <p>The game updates every second the server sends your client (bot) the status of the
+                                updated field at the moment and awaits a response - a command to the player. In the next
+                                second, the player must timely give the player a command. If you don’t do that on time,
+                                the player stands still.
+                            </p>
+                            <p>There are several teams: UP, DOWN, LEFT, RIGHT - set the player in motion in a given
+                                direction by 1 cell; ACT + UP | DOWN | Left | RIGHT - set the flag in the given path.
+                            </p>
+                            <p>
+                                The main task is to play thoughtfully and defeat the virus.
+                                Good luck with the fight against coronavirus!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
